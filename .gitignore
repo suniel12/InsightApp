@@ -1,0 +1,11 @@
+# General .gitignore
+.DS_Store
+node_modules/
+.env
+*.log
+__pycache__/
+dist/
+build/
+coverage/
+.idea/
+.vscode/
