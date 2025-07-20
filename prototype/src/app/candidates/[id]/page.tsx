@@ -1,15 +1,19 @@
+'use client';
+
 import Link from 'next/link';
+import { use } from 'react';
 import { mockCandidates } from '@/data/candidates';
 import { notFound } from 'next/navigation';
 
 interface CandidateProfilePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export default function CandidateProfilePage({ params }: CandidateProfilePageProps) {
-  const candidate = mockCandidates.find(c => c.id === params.id);
+  const { id } = use(params);
+  const candidate = mockCandidates.find(c => c.id === id);
   
   if (!candidate) {
     notFound();
