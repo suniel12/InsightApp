@@ -51,7 +51,7 @@ const PHONE_SCREEN_QUESTIONS: PhoneScreenQuestion[] = [
   },
   {
     id: 'technical-skills',
-    question: 'What\'s your experience with [specific technology]?',
+    question: 'What&apos;s your experience with [specific technology]?',
     category: 'Technical Skills',
     typicalAnswer: 'Years of experience, basic proficiency level',
     importance: 'high'
@@ -104,14 +104,14 @@ export default function PhoneScreenAnalysis({ candidateId, candidateName, transc
         questionId: 'background',
         answer: 'Senior React Developer & Tech Lead with 5+ years experience',
         confidence: 95,
-        transcriptExcerpt: 'Hi, I\'m Sarah Chen, and I\'m a Senior React Developer and Tech Lead with over 5 years of experience building large-scale web applications...',
+        transcriptExcerpt: 'Hi, I&apos;m Sarah Chen, and I&apos;m a Senior React Developer and Tech Lead with over 5 years of experience building large-scale web applications...',
         additionalInsights: ['Leadership experience managing 4-person team', 'Specializes in e-commerce platforms', 'Experience with $24M revenue systems']
       },
       {
         questionId: 'recent-projects',
         answer: 'Complete architectural rebuild of $24M e-commerce platform',
         confidence: 98,
-        transcriptExcerpt: 'Let me start with what\'s probably been the most challenging and transformative project of my career - the complete architectural rebuild of TechFlow Solutions\' e-commerce platform...',
+        transcriptExcerpt: 'Let me start with what&apos;s probably been the most challenging and transformative project of my career - the complete architectural rebuild of TechFlow Solutions&apos; e-commerce platform...',
         additionalInsights: ['Zero-downtime migration strategy', 'Performance improved from 4.2s to 0.8s', 'Handled 100,000+ concurrent users', 'Used strangler fig pattern']
       },
       {
@@ -125,7 +125,7 @@ export default function PhoneScreenAnalysis({ candidateId, candidateName, transc
         questionId: 'challenges',
         answer: 'Migrated legacy PHP monolith with zero downtime',
         confidence: 96,
-        transcriptExcerpt: 'The really challenging part - we couldn\'t afford any downtime. None. We were processing $2-3 million in sales daily, with peak traffic hitting 100,000+ concurrent users...',
+        transcriptExcerpt: 'The really challenging part - we couldn&apos;t afford any downtime. None. We were processing $2-3 million in sales daily, with peak traffic hitting 100,000+ concurrent users...',
         additionalInsights: ['Strangler fig migration pattern', 'Feature flag implementation', 'Database optimization', 'Performance monitoring']
       },
       {
