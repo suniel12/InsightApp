@@ -21,7 +21,7 @@ export default function Home() {
               }`}
               style={selectedRole === 'candidate' ? {backgroundColor: '#1F5F5F'} : {}}
             >
-              I'm a Candidate
+              I&apos;m a Candidate
             </button>
             <button
               onClick={() => setSelectedRole('employer')}
@@ -32,7 +32,7 @@ export default function Home() {
               }`}
               style={selectedRole === 'employer' ? {backgroundColor: '#1F5F5F'} : {}}
             >
-              I'm an Employer
+              I&apos;m an Employer
             </button>
           </div>
         </div>
