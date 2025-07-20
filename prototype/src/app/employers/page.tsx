@@ -48,10 +48,24 @@ export default function EmployersPage() {
           <Link href="/" className="text-blue-600 hover:text-blue-700 mb-4 inline-block">
             ← Back to Home
           </Link>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Candidate Search</h1>
-          <p className="text-gray-600 text-lg">
-            Find the perfect candidates through natural language queries
-          </p>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h1 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Candidate Search</h1>
+              <p className="text-gray-600 text-base sm:text-lg">
+                Find the perfect candidates through natural language queries
+              </p>
+            </div>
+            <Link 
+              href="/employers/phone-screen-analysis"
+              className="bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium transition-colors flex items-center justify-center text-sm sm:text-base whitespace-nowrap"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+              <span className="hidden sm:inline">Phone Screen Analysis</span>
+              <span className="sm:hidden">Analysis</span>
+            </Link>
+          </div>
         </div>
 
         {/* Search Interface */}
@@ -60,24 +74,24 @@ export default function EmployersPage() {
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Search Candidates
             </label>
-            <div className="flex gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="e.g., 'Show me React developers who have scaled applications to 100k+ users'"
-                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900"
+                placeholder="e.g., 'React developers with 100k+ users'"
+                className="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-gray-900 text-sm sm:text-base"
               />
               <button 
                 onClick={handleAISearch}
                 disabled={!searchQuery.trim() || isQuerying}
-                className={`px-6 py-3 rounded-lg font-medium transition-colors ${
+                className={`px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors whitespace-nowrap ${
                   !searchQuery.trim() || isQuerying
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                     : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
               >
-                {isQuerying ? 'Searching...' : 'AI Search'}
+                {isQuerying ? 'Searching...' : 'Search'}
               </button>
             </div>
           </div>

@@ -43,10 +43,10 @@ export default function Home() {
             {/* Hero Section */}
             <div className="text-center mb-16">
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Go Beyond Resumes
+              Your Resume is Just the Beginning              
               </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Describe the projects you love in as much detail as you want.
+              Share the full story behind your best projects              
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/record">
@@ -72,8 +72,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Upload Your Resume</h3>
-                  <p className="text-gray-600">Start with your existing resume as the foundation. No need to worry about length or formatting.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Start With Your Resume</h3>
+                  <p className="text-gray-600">Upload your existing resume as the foundation</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#1F5F5F30'}}>
@@ -81,8 +81,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Record Your Stories</h3>
-                  <p className="text-gray-600">Bring your resume to life by sharing the stories behind your projects, challenges, and accomplishments.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Tell Your Stories</h3>
+                  <p className="text-gray-600">Record 10-15 minutes sharing the details behind your most meaningful work</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#1F5F5F40'}}>
@@ -117,8 +117,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Reusable Profile</h3>
-                    <p className="text-gray-600 text-sm">One recording works for multiple job opportunities</p>
+                    <h3 className="font-semibold text-gray-900">One Profile, Multiple Opportunities</h3>
+                    <p className="text-gray-600 text-sm">Your stories stay in your profile and are available for all opportunities</p>
                   </div>
                 </div>
 
@@ -127,8 +127,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <h3 className="font-semibold text-gray-900">Authentic Representation</h3>
-                    <p className="text-gray-600 text-sm">Share the story behind your accomplishments</p>
+                    <h3 className="font-semibold text-gray-900">Stop Shouting Into the Void</h3>
+                    <p className="text-gray-600 text-sm">Get meaningful responses instead of application black holes</p>
                   </div>
                 </div>
               </div>
@@ -142,15 +142,19 @@ export default function Home() {
             {/* Hero Section */}
             <div className="text-center mb-16">
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Discover Talent Through Conversation
-              </h1>
+              Replace Every Phone Screen              </h1>
               <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Skip the phone screens. Query candidate experiences using natural language and understand their true capabilities through authentic conversations.
+              Query candidate experiences using natural language. Skip the 30-minute calls.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/employers">
                   <button className="text-white px-8 py-3 rounded-lg font-semibold transition-colors hover:opacity-90" style={{backgroundColor: '#1F5F5F'}}>
                     Browse Candidates
+                  </button>
+                </Link>
+                <Link href="/employers/phone-screen-analysis">
+                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Phone Screen Analysis
                   </button>
                 </Link>
                 <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-3 rounded-lg font-semibold transition-colors">
@@ -162,7 +166,7 @@ export default function Home() {
             {/* How It Works for Employers */}
             <div className="mb-16">
               <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
-                How It Works for Employers
+                Why InsightApp?
               </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
@@ -171,8 +175,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Defeat AI-Generated Applications</h3>
-                  <p className="text-gray-600">Traditional keyword matching is broken. Candidates AI-customize resumes for every job. Analyze actual experience instead of optimized keywords.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Evolve Your Hiring Process</h3>
+                  <p className="text-gray-600"> Traditional keyword matching is broken with AI-customized resumes </p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#1F5F5F30'}}>
@@ -180,8 +184,8 @@ export default function Home() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Scale Your Screening Process</h3>
-                  <p className="text-gray-600">10 applications? Deep-dive with Q&A to skip phone screens. 1000+ applications? Automate scoring to surface top 50, then manually select final 10.</p>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900">Customize Your Screening Process</h3>
+                  <p className="text-gray-600">Deep-dive with specific questions or fully automate to surface top candidates</p>
                 </div>
                 <div className="text-center">
                   <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: '#1F5F5F40'}}>
@@ -190,7 +194,7 @@ export default function Home() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-gray-900">Save Time & Money</h3>
-                  <p className="text-gray-600">Reduce phone screens by 90% and make better hiring decisions with deeper candidate understanding.</p>
+                  <p className="text-gray-600">Reduce screening time by 90% and make better hiring decisions with deeper candidate understanding.</p>
                 </div>
               </div>
             </div>

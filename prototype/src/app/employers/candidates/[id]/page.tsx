@@ -6,6 +6,7 @@ import { testResumes } from '@/data/test-resumes';
 import { testTranscriptions } from '@/data/test-transcriptions';
 import { notFound } from 'next/navigation';
 import QueryModal from '@/components/QueryModal';
+import PhoneScreenAnalysis from '@/components/PhoneScreenAnalysis';
 
 interface EmployerCandidateProfilePageProps {
   params: Promise<{
@@ -17,6 +18,7 @@ export default function EmployerCandidateProfilePage({ params }: EmployerCandida
   const [showFullResume, setShowFullResume] = useState(false);
   const [showFullTranscript, setShowFullTranscript] = useState(false);
   const [showQueryModal, setShowQueryModal] = useState(false);
+  const [showPhoneScreenAnalysis, setShowPhoneScreenAnalysis] = useState(false);
   
   // Unwrap the async params using React.use()
   const { id } = use(params);
@@ -254,23 +256,45 @@ export default function EmployerCandidateProfilePage({ params }: EmployerCandida
         </div>
 
         {/* Action Buttons */}
-        <div className="flex gap-4 justify-center mt-8">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8">
+          <button 
+            onClick={() => setShowPhoneScreenAnalysis(!showPhoneScreenAnalysis)}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors flex items-center justify-center text-sm sm:text-base"
+          >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
+            <span className="hidden sm:inline">{showPhoneScreenAnalysis ? 'Hide' : 'Phone Screen'} Analysis</span>
+            <span className="sm:hidden">{showPhoneScreenAnalysis ? 'Hide' : 'Analysis'}</span>
+          </button>
           <button 
             onClick={() => setShowQueryModal(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors text-sm sm:text-base"
           >
-            Query This Candidate
+            <span className="hidden sm:inline">Query This Candidate</span>
+            <span className="sm:hidden">Query</span>
           </button>
-          <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-            Schedule Interview
+          <button className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors text-sm sm:text-base">
+            <span className="hidden sm:inline">Schedule Interview</span>
+            <span className="sm:hidden">Interview</span>
           </button>
-          <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
-            Save Candidate
-          </button>
-          <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-6 py-3 rounded-lg font-medium transition-colors">
-            Export Profile
+          <button className="border border-gray-300 hover:border-gray-400 text-gray-700 px-4 sm:px-6 py-3 rounded-lg font-medium transition-colors text-sm sm:text-base">
+            <span className="hidden sm:inline">Save Candidate</span>
+            <span className="sm:hidden">Save</span>
           </button>
         </div>
+
+        {/* Phone Screen Analysis */}
+        {showPhoneScreenAnalysis && (
+          <div className="mt-8">
+            <PhoneScreenAnalysis
+              candidateId={id}
+              candidateName={candidateName}
+              transcript={transcript.transcript}
+              resume={resume.resumeText}
+            />
+          </div>
+        )}
 
         {/* Query Modal */}
         <QueryModal
