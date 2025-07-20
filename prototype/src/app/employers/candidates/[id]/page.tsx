@@ -5,6 +5,7 @@ import { useState, use } from 'react';
 import { testResumes } from '@/data/test-resumes';
 import { testTranscriptions } from '@/data/test-transcriptions';
 import { notFound } from 'next/navigation';
+import QueryModal from '@/components/QueryModal';
 
 interface EmployerCandidateProfilePageProps {
   params: Promise<{
@@ -15,6 +16,7 @@ interface EmployerCandidateProfilePageProps {
 export default function EmployerCandidateProfilePage({ params }: EmployerCandidateProfilePageProps) {
   const [showFullResume, setShowFullResume] = useState(false);
   const [showFullTranscript, setShowFullTranscript] = useState(false);
+  const [showQueryModal, setShowQueryModal] = useState(false);
   
   // Unwrap the async params using React.use()
   const { id } = use(params);
@@ -253,9 +255,12 @@ export default function EmployerCandidateProfilePage({ params }: EmployerCandida
 
         {/* Action Buttons */}
         <div className="flex gap-4 justify-center mt-8">
-          <Link href="/employers/query" className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+          <button 
+            onClick={() => setShowQueryModal(true)}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          >
             Query This Candidate
-          </Link>
+          </button>
           <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
             Schedule Interview
           </button>
@@ -266,6 +271,14 @@ export default function EmployerCandidateProfilePage({ params }: EmployerCandida
             Export Profile
           </button>
         </div>
+
+        {/* Query Modal */}
+        <QueryModal
+          isOpen={showQueryModal}
+          onClose={() => setShowQueryModal(false)}
+          candidateId={id}
+          candidateName={candidateName}
+        />
       </div>
     </div>
   );
